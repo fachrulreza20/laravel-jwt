@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,6 @@ Route::get('project', [ProjectController::class, 'project']);
 
 Route::get('projectall', [ProjectController::class, 'projectAuth'])->middleware('jwt.verify');
 Route::get('user', [UserController::class, 'getAuthenticatedUser'])->middleware('jwt.verify');
+
+Route::get('post', [PostController::class, 'post']);
+Route::get('postall', [PostController::class, 'postAuth'])->middleware('jwt.verify');

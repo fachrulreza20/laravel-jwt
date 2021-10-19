@@ -19,4 +19,10 @@ class PostControllerTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_store_data()
+    {
+       
+    }
+
 }

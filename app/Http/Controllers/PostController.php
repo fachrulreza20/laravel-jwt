@@ -46,6 +46,7 @@ class PostController extends Controller
     }
 
 
+
     public function edit(Post $post)
     {
         return view('posts.edit', compact('post'));
@@ -71,4 +72,17 @@ class PostController extends Controller
         return redirect()->route('posts.index')
             ->with('success', 'Post deleted successfully');
     }
+
+
+
+    public function post() {
+        $data = "Data All Project";
+        return response()->json($data, 200);
+    }
+
+    public function postAuth() {
+        $data = "Welcome " . Auth::user()->name;
+        return response()->json($data, 200);
+    }
+
 }
